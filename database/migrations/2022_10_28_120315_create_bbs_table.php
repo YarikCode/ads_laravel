@@ -19,6 +19,8 @@ return new class extends Migration
             $table->text('content');
             $table->float('price');
             $table->timestamps();
+            $table->foreignId('user_id')->constained()
+                                        ->onDelete('cascade');
             $table->index('created_at');
         });
     }
